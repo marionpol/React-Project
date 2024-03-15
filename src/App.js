@@ -1,34 +1,30 @@
-import { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import React, { useState } from 'react';
+import CalendarComponent from './components/Calendar';
+import EventForm from './components/EventForm';
 import './App.css';
 
 function App() {
   const [date, setDate] = useState(new Date());
+  const [events, setEvents] = useState([]);
+
+  const addEvent = (eventData) => {
+    setEvents([...events, { date: date, name: eventData.name, time: eventData.time }]);
+  };
+
+  const removeEvent = (index) => {
+    const updatedEvents = [...events];
+    updatedEvents.splice(index, 1);
+    setEvents(updatedEvents);
+  };
 
   return (
     <div className='app'>
-      <h1 className='text-center'>React Calendar with Range</h1>
+      <h1 className='text-center'>Event Calendar</h1>
       <div className='calendar-container'>
-        <Calendar
-          onChange={setDate}
-          value={date}
-          selectRange={true}
-        />
+        <CalendarComponent date={date} setDate={setDate} events={events} setEvents={setEvents} />
+        <EventForm onSubmit={addEvent} events={events} removeEvent={removeEvent} currentDate={date} />
+
       </div>
-      {date.length > 0 ? (
-        <p className='text-center'>
-          <span className='bold'>Start:</span>{' '}
-          {date[0].toDateString()}
-          &nbsp;|&nbsp;
-          <span className='bold'>End:</span> {date[1].toDateString()}
-        </p>
-      ) : (
-        <p className='text-center'>
-          <span className='bold'>Default selected date:</span>{' '}
-          {date.toDateString()}
-        </p>
-      )}
     </div>
   );
 }

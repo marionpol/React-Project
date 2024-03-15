@@ -1,0 +1,91 @@
+.event-form {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event-form .form-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+  
+  .event-form input[type="text"],
+  .event-form input[type="time"],
+  .event-form button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .event-form button {
+    background-color: #6f48eb;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .event-form button:hover {
+    background-color: #51379b;
+  }
+  
+  .event-remove-button {
+    margin-top: 10px;
+  }
+
+  .event-remove-button button {
+    padding: 8px 12px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .event-remove-button button:hover {
+    background-color: #d32f2f;
+  }
+  
+  .custom-time-input {
+    display: flex;
+}
+
+.event-form-select {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+  color: #333;
+}
+
+.event-form .event-item {
+  margin-top: 10px;
+}
+
+.event-form .event-item button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.event-form .event-item button:hover {
+  background-color: #d32f2f;
+}
